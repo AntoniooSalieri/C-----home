@@ -3,7 +3,9 @@
 string numberStr = Console.ReadLine();
 int number = int.Parse(numberStr);
 
-for (int i = 0; i < number; i++)
+for (int i = 0; i < number+1; i++)
 {
-    Console.Write(i + " ");
+    if (i % 2 == 0){
+        Console.Write(i + " ");
+    }
 }
