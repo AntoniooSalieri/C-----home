@@ -1,19 +1,34 @@
-﻿string numberStr = Console.ReadLine();
-int numberInt = Convert.ToInt32(numberStr);
-int count = -1;
-string numberRevers = "";
-while (numberInt > 0)
-{
-    numberInt = numberInt / 10;
-    count++;
+﻿string input = Console.ReadLine();
+
+int ConverterToInt(string numberText){
+    int numberInt = Convert.ToInt32(numberText);
+    Console.WriteLine(numberInt);               ///
+    return numberInt;
 }
 
-while (count > -1)
-{
-    numberRevers = numberRevers + numberStr[count];
-    count--;
+int HowManyChars(int number){
+    int count = 0;
+    while (number > 0)
+    {
+        number = number / 10;
+        count++;
+    }
+    Console.WriteLine(count);                    ///
+    return count;
 }
 
-Console.WriteLine(numberRevers);
-if (numberRevers == numberStr) Console.WriteLine("+");
+string OutputReversedNumber(int counter, string numberInput){
+    string reversedNumber = "";
+    for (int iaaa = counter-1; iaaa >= 0; iaaa--)
+    {
+        reversedNumber = reversedNumber + numberInput[iaaa];
+        counter--;
+    }
+    return reversedNumber;
+}
+
+string numberReversed = OutputReversedNumber(HowManyChars(ConverterToInt(input)), input);
+Console.WriteLine(numberReversed);
+
+if (numberReversed == input) Console.WriteLine("+");
 else Console.WriteLine("-");
