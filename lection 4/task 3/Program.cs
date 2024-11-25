@@ -19,7 +19,7 @@ int[] array = new int[arrayLength];
 
 Console.Write("Random min: ");
 int RanMin = IntInput();
-Console.Write("Random max: ");
+Console.Write("Random max: "); 
 int RanMax = IntInput();
 Console.Write("Your array: ");
 
