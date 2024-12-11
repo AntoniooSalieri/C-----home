@@ -3,10 +3,11 @@
 
 int[,] array = new int[m, n];
 
+Random random = new Random();
 
 void FillArray(int[,] arr, int row = 0, int column = 0){
     if (column < arr.GetLength(1)){
-        arr[row, column] = 1;
+        arr[row, column] = random.Next(1, 10);;
         FillArray(arr, row, column + 1);
     }
     else{
